@@ -1,7 +1,7 @@
 import React from 'react'
 import {StyleSheet, View, Image} from 'react-native';
 
-function Register() {
+export default function Register(){
   return (
     <View>
         
@@ -9,4 +9,3 @@ function Register() {
   )
 }
 
-export default Register
