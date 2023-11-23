@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import logo from '../pics/logo.png';
 import {StyleSheet , TouchableOpacity , View, Text, Image, SafeAreaView, TextInput} from 'react-native';
+import {Link} from 'expo-router';
 
 
 const Login = ()=> {
@@ -25,6 +26,11 @@ const Login = ()=> {
                     <Text style={{textAlign:"center",justifyContent:"center"}}>LogIn</Text>
                 </View>
             </TouchableOpacity>
+
+            <View style={styles.signup}>
+                <Text>Dont have an account </Text>
+                <Link style={{fontSize:20}}href="/Register">Signup</Link>
+            </View>
 
         </SafeAreaView>
     )
@@ -55,15 +61,24 @@ const styles = StyleSheet.create({
         
     },
     button:{
-        
         alignSelf:"center",
-        width:300,
-        height:300,
+        marginTop:50,
+        width:150,
+        height:30,
+        borderRadius:15,
         backgroundColor:"blue"
     },
     formbig:{
         alignItems:"center"
+    },
+    signup:{
+        marginTop:30,
+        alignSelf:"center",
+        flexDirection:"row"
     }
+    
+
+
 })
 
 export default Login;
