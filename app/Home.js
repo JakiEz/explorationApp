@@ -1,7 +1,9 @@
 import React from 'react'
-import {View,Text, SafeAreaView, ScrollView, StyleSheet, FlatList} from 'react-native'
+import {View,Text, SafeAreaView, ScrollView, StyleSheet, FlatList, Image, Pressable} from 'react-native'
+import { Ionicons } from '@expo/vector-icons';
+import {router} from 'expo-router';
+import { TouchableOpacity } from 'react-native-gesture-handler'
 const DATA = [
-
   {
     id:'1234',
     title:'Jackie'
@@ -20,6 +22,10 @@ const DATA = [
   },
 ]
 
+const back = () => {
+  console.log("back");
+  <link href="/Login.js"></link>
+}
 
 const Home = () => {
   return (
@@ -31,9 +37,8 @@ const Home = () => {
           return(<View style={{width:300,backgroundColor:"green"}}><Text>{item.title}</Text></View>)
          }}
          >
-
         </FlatList>
- 
+         
      
       </ScrollView>
     </SafeAreaView>
