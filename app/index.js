@@ -3,7 +3,7 @@ import logo from '../pics/logo.png';
 import {StyleSheet , TouchableOpacity , View, Text, Image, SafeAreaView, TextInput} from 'react-native';
 
 
-export default function Login(){
+const Login = ()=> {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -29,13 +29,12 @@ export default function Login(){
         </SafeAreaView>
     )
 }
-
 const styles = StyleSheet.create({
     logo:{
         flex:1,
         alignItems:"center",
     },
-
+    
     img:{
         height:150,
         width:150,
@@ -67,3 +66,4 @@ const styles = StyleSheet.create({
     }
 })
 
+export default Login;
