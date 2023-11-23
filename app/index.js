@@ -29,8 +29,7 @@ const Login = ()=> {
 
             <View style={styles.signup}>
                 <Text>Dont have an account </Text>
-                <Link href="/Register">signup</Link>
-
+                <Link style={{fontSize:20}}href="/Register">Signup</Link>
             </View>
 
         </SafeAreaView>
@@ -73,7 +72,8 @@ const styles = StyleSheet.create({
         alignItems:"center"
     },
     signup:{
-        
+        marginTop:30,
+        alignSelf:"center",
         flexDirection:"row"
     }
     
