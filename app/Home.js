@@ -30,17 +30,26 @@ const back = () => {
 const Home = () => {
   return (
     <SafeAreaView>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <FlatList
+          style={{height:150}}
+          horizontal
+          data={DATA}
+          renderItem={({item})=>{
+            return(<View style={styles.friends}><Text>{item.id}</Text></View>)
+          }}
+          />
+       
         <FlatList
+        //  style={{flex:1}}
+          
          data={DATA}
          renderItem={({item})=>{
-          return(<View style={{width:300,backgroundColor:"green"}}><Text>{item.title}</Text></View>)
+          return(<View style={{borderRadius:15,marginBottom:10,alignSelf:"center",height:200,width:"90%",backgroundColor:"green"}}><Text>{item.title}</Text></View>)
          }}
-         >
-        </FlatList>
+         />
+      
          
      
-      </ScrollView>
     </SafeAreaView>
   )
 }
@@ -52,6 +61,15 @@ const styles = StyleSheet.create({
     height:100,
     width:100,
     marginLeft:10
+  },
+  friends:{
+    height:100,
+    width:100,
+    backgroundColor:"blue",
+    marginLeft:30,
+    borderRadius:100,
+    
+
   }
 })
 
