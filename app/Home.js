@@ -12,8 +12,7 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import {useFonts} from 'expo-font';
-
+import { useFonts } from "expo-font";
 
 const DATA = [
   {
@@ -48,19 +47,40 @@ const Home = () => {
   return (
     <SafeAreaView>
       <View style={styles.p}>
-        <Text style={{fontFamily:"Montserrat"}}>See what</Text>
-        <Text>your friends are doing</Text>
+        <Text style={{ fontSize: 30, fontFamily: "Montserrat" }}>See what</Text>
+        <Text style={{ fontSize: 30 }}>your friends are doing</Text>
       </View>
 
+      {/* <View style={{width:"100%", marginBottom:20}}>
+        <FlatList
+          horizontal
+          data={DATA}
+          renderItem={({ item }) => {
+            return (
+              <TouchableOpacity style={styles.cat}>
+                <View
+                  style={{ justifyContent: "center", alignItems: "center" }}
+                >
+                  <Text style={{ textAlign: "center" }}>{item.title}</Text>
+                </View>
+              </TouchableOpacity>
+            );
+          }}
+        />
+      </View> */}
+
       <FlatList
-        //  style={{flex:1}}
-        horizontal
+        style={{height:600}}
+        showsHorizontalScrollIndicator={false}
+        vertical
         data={DATA}
         renderItem={({ item }) => {
           return (
-            <View style={styles.friends}>
-              <Text>{item.title}</Text>
-            </View>
+            <TouchableOpacity style={styles.friends}>
+              <View style={{ justifyContent: "center", alignItems: "center" }}>
+                <Text style={{ textAlign: "center" }}>{item.title}</Text>
+              </View>
+            </TouchableOpacity>
           );
         }}
       />
@@ -72,17 +92,27 @@ const styles = StyleSheet.create({
   p: {
     width: 500,
     height: 100,
-    backgroundColor: "blue",
+    // backgroundColor: "blue",
+    margin: 30,
+    
   },
 
   friends: {
+    marginLeft:0,
     borderRadius: 15,
     marginBottom: 10,
-    marginRight:30,
+    
     alignSelf: "center",
     height: 200,
-    width: 300,
+    width: 380,
     backgroundColor: "green",
+  },
+
+  cat: {
+    width:8,                                                                                                              
+    height:20,
+    backgroundColor:"blue",
+    margin:20
   },
 });
 

@@ -12,7 +12,7 @@ import { TextInput } from "react-native-gesture-handler";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import { Ionicons } from "@expo/vector-icons";
 import CheckBox from "expo-checkbox";
-import Buttonn from "../Buttonn";
+import Buttonn from "../../Components/Buttonn";
 import { Pressable } from "react-native";
 import { Link,router } from "expo-router";
 
