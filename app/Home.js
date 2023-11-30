@@ -40,10 +40,10 @@ const DATA = [
 // }
 
 const Home = () => {
-  const [fontsLoaded] = useFonts({
-    'Montserrat-Bold': require('../asset/fonts/Montserrat-Bold.ttf'),
-    'Montserrat-Regular': require('../asset/fonts/Montserrat-Regular.ttf'),
-  })
+  // const [fontsLoaded] = useFonts({
+  //   'Montserrat-Bold': require('../asset/fonts/Montserrat-Bold.ttf'),
+  //   'Montserrat-Regular': require('../asset/fonts/Montserrat-Regular.ttf'),
+  // })
 
   return (
     <SafeAreaView>
