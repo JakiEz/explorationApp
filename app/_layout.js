@@ -7,6 +7,7 @@ const layout = ()=>{
             <Stack.Screen name="Register" options={{headerShown:false}}/>
             <Stack.Screen name="Login" options={{headerShown:false}}/>
             <Stack.Screen name="Home" options={{headerShown:false}}/>
+            <Stack.Screen name="Profile" options={{headerShown:false}}/>
         </Stack>
     )
 }

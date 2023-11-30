@@ -24,6 +24,20 @@ const Login = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
+      <TouchableOpacity style={styles.button}>
+            <Link
+              href="/Profile"
+              style={{
+                textAlign: 'center',
+                justifyContent: 'center',
+                fontSize: 18,
+                color: Colors.white,
+                fontWeight: 'bold',
+              }}
+            >
+              go profile
+            </Link>
+          </TouchableOpacity>
         <KeyboardAvoidingView
           style={styles.flexStyle}
           enabled
