@@ -14,7 +14,7 @@ export default function Profile() {
         <View>
            <ScrollView>
                 <View className='relative'>
-                    
+                
                 </View>
           </ScrollView>
         </View>
