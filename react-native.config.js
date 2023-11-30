@@ -1,7 +1,7 @@
 module.exports = {
-    project: {
-        ios: {},
-        android: {},
+    
+    config: {
+      
+      fontLinking: true,
     },
-    assets: ['.assets/fonts/Montserrat'],
-};
+  };

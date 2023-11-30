@@ -1,8 +1,10 @@
 import {Stack} from "expo-router";
 import Header from "../App";
+import {StyleSheet, View} from  'react-native';
 
 const layout = ()=>{
     return (
+        
         <Stack>
             <Stack.Screen name="Register" options={{headerShown:false}}/>
             <Stack.Screen name="Login" options={{headerShown:false}}/>
@@ -11,5 +13,9 @@ const layout = ()=>{
         </Stack>
     )
 }
+
+const styles = StyleSheet.create({
+   
+})
 
 export default layout;
