@@ -38,6 +38,21 @@ const Login = () => {
               go profile
             </Link>
           </TouchableOpacity>
+
+          <TouchableOpacity style={styles.button}>
+            <Link
+              href="/Post"
+              style={{
+                textAlign: 'center',
+                justifyContent: 'center',
+                fontSize: 18,
+                color: Colors.white,
+                fontWeight: 'bold',
+              }}
+            >
+              go post
+            </Link>
+          </TouchableOpacity>
         <KeyboardAvoidingView
           style={styles.flexStyle}
           enabled
