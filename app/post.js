@@ -11,6 +11,7 @@ import {
 import { ScrollView } from "react-native-gesture-handler";
 import * as ImagePicker from "expo-image-picker";
 import * as Permissions from "expo-permissions";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function Post() {
   const [image, setImage] = useState(null);
@@ -82,7 +83,7 @@ export default function Post() {
           onChangeText={(text) => setCaption(text)}
         />
         <TouchableOpacity style={styles.postButton} onPress={handlePost}>
-          <Text style={styles.postButtonText}>Post</Text>
+          <Ionicons name="checkmark-circle" size={80} color="green" />
         </TouchableOpacity>
       </View>
     </ScrollView>
@@ -121,12 +122,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   postButton: {
-    backgroundColor: "green",
     padding: 10,
     borderRadius: 5,
-  },
-  postButtonText: {
-    color: "white",
-    fontWeight: "bold",
+    marginLeft:20
   },
 });
