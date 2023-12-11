@@ -41,7 +41,7 @@ const Login = () => {
 
           <TouchableOpacity style={styles.button}>
             <Link
-              href="/Post"
+              href="/post"
               style={{
                 textAlign: 'center',
                 justifyContent: 'center',
