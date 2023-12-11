@@ -10,7 +10,7 @@ import {
   Pressable,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { router } from "expo-router";
+import { router, Link } from "expo-router";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useFonts } from "expo-font";
 
@@ -46,6 +46,20 @@ const Home = () => {
 
   return (
     <SafeAreaView>
+      {/* <TouchableOpacity style={styles.button}>
+            <Link
+              href="./Profile"
+              style={{
+                textAlign: 'center',
+                justifyContent: 'center',
+                fontSize: 18,
+                color: "white",
+                fontWeight: 'bold',
+              }}
+            >
+              go profile
+            </Link>
+          </TouchableOpacity> */}
       <View style={styles.p}>
         <Text style={{ fontSize: 30, fontFamily: "Montserrat" }}>See what</Text>
         <Text style={{ fontSize: 30 }}>your friends are doing</Text>
@@ -96,7 +110,15 @@ const styles = StyleSheet.create({
     margin: 30,
     
   },
-
+  button: {
+    alignSelf: 'center',
+    justifyContent: 'center',
+    marginTop: 30,
+    width: 150,
+    height: 30,
+    borderRadius: 15,
+    backgroundColor: 'green',
+  },
   friends: {
     marginLeft:0,
     borderRadius: 15,

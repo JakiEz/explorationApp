@@ -26,7 +26,7 @@ const Login = () => {
       <ScrollView contentContainerStyle={styles.scrollContainer}>
       <TouchableOpacity style={styles.button}>
             <Link
-              href="/Profile"
+              href="./Profile"
               style={{
                 textAlign: 'center',
                 justifyContent: 'center',
