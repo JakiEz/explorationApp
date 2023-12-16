@@ -7,15 +7,20 @@ import {
   StyleSheet,
   TextInput,
   Alert,
+
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import * as ImagePicker from "expo-image-picker";
 import * as Permissions from "expo-permissions";
 import { Ionicons } from "@expo/vector-icons";
+import { Picker} from '@react-native-picker/picker';
+import { ScrollView as GestureScrollView } from "react-native-gesture-handler";
+
 
 export default function Post() {
   const [image, setImage] = useState(null);
   const [caption, setCaption] = useState("");
+  const [category, setCategory] = useState("Uncategorized");
 
   useEffect(() => {
     // Ask for permission when the component mounts
@@ -53,13 +58,14 @@ export default function Post() {
 
   const handlePost = () => {
     if (image && caption.trim() !== "") {
-      // TODO: Implement logic to post the image and caption
+      // TODO: Implement logic to post the image, caption, and category
       Alert.alert("Post Successful", "Your post has been uploaded!");
       // Clear the state after posting
       setImage(null);
       setCaption("");
+      setCategory("Uncategorized");
     } else {
-      Alert.alert("Error", "Please select an image and add a caption.");
+      Alert.alert("Error", "Please select an image, add a caption, and choose a category.");
     }
   };
 
@@ -82,6 +88,18 @@ export default function Post() {
           value={caption}
           onChangeText={(text) => setCaption(text)}
         />
+        <Picker
+          selectedValue={category}
+          onValueChange={(itemValue) => setCategory(itemValue)}
+          style={styles.categoryPicker}
+        >
+          <Picker.Item label="Uncategorized" value="Uncategorized" />
+          <Picker.Item label="sports" value="sports" />
+          <Picker.Item label="Category 2" value="Category 2" />
+          <Picker.Item label="Category 2" value="Category 2" />
+          <Picker.Item label="Category 2" value="Category 2" />
+          {/* Add more categories as needed */}
+        </Picker>
         <TouchableOpacity style={styles.postButton} onPress={handlePost}>
           <Ionicons name="checkmark-circle" size={80} color="green" />
         </TouchableOpacity>
@@ -121,9 +139,18 @@ const styles = StyleSheet.create({
     padding: 10,
     marginBottom: 20,
   },
+  categoryPicker: {
+    width: 200,
+    height: 150,
+    borderColor: "gray",
+    borderRadius: 5,
+    marginBottom: 20,
+    marginVertical:-20,
+  },
   postButton: {
     padding: 10,
     borderRadius: 5,
-    marginLeft:20
+    marginLeft: 20,
+    marginVertical:40
   },
 });
