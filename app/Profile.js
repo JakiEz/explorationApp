@@ -1,26 +1,26 @@
+import React, { useState } from "react";
 import {
   View,
   Text,
-  StatusBar,
-  ScrollView,
+  ImageBackground,
   Image,
   TouchableOpacity,
-  ImageBackground,
+  ScrollView,
   StyleSheet,
 } from "react-native";
-import React, { useEffect, useLayoutEffect, useState } from "react";
-import { useNavigation, useRoute } from "@react-navigation/native";
-import { Ionicons } from "@expo/vector-icons";
-import { Link } from "expo-router";
-import { FlatList } from "react-native-gesture-handler";
 
 export default function Profile() {
   const [isFollowing, setIsFollowing] = useState(false);
+  const [followerCount, setFollowerCount] = useState(0); 
 
   const handlePress = () => {
     // Toggle the following state
     setIsFollowing((prev) => !prev);
+
+    // Update the follower count based on the current following state
+    setFollowerCount((prevCount) => (isFollowing ? prevCount - 1 : prevCount + 1));
   };
+
   return (
     <View style={{ flex: 1 }}>
       <View>
@@ -31,6 +31,14 @@ export default function Profile() {
             width: 470,
           }}
         />
+      </View>
+      <View>
+      <Text style={{ fontWeight: "bold", color: '#989898', marginTop: -80,marginLeft:160,fontSize:15 }}>
+            followers
+          </Text>
+          <Text style={{ fontWeight: "bold", color: "white", marginTop: -50,marginLeft:184,fontSize:23 }}>
+          {followerCount}
+          </Text>
       </View>
 
       <View
@@ -105,7 +113,7 @@ export default function Profile() {
                 source={require("../pics/phone.png")}
                 style={styles.Image}
                 resizeMode="cover"
-              ></Image>
+              />
             </View>
 
             <View style={styles.mediaImageContainer}>
@@ -113,7 +121,7 @@ export default function Profile() {
                 source={require("../pics/phone.png")}
                 style={styles.Image}
                 resizeMode="cover"
-              ></Image>
+              />
             </View>
 
             <View style={styles.mediaImageContainer}>
@@ -121,7 +129,7 @@ export default function Profile() {
                 source={require("../pics/phone.png")}
                 style={styles.Image}
                 resizeMode="cover"
-              ></Image>
+              />
             </View>
 
             <View style={styles.mediaImageContainer}>
@@ -129,11 +137,12 @@ export default function Profile() {
                 source={require("../pics/phone.png")}
                 style={styles.Image}
                 resizeMode="cover"
-              ></Image>
+              />
             </View>
           </ScrollView>
         </View>
-
+          
+        {/* Follow button */}
         <View
           style={{
             paddingHorizontal: 120,
@@ -150,7 +159,7 @@ export default function Profile() {
             onPress={handlePress}
           >
             <Text style={styles.buttonText}>
-              {isFollowing ? "FOLLOWING" : "FOLLOW"}
+              {isFollowing ? "FOLLOWING" : "+ FOLLOW"}
             </Text>
           </TouchableOpacity>
         </View>
@@ -158,6 +167,7 @@ export default function Profile() {
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   button: {
     borderColor: "black",
@@ -174,8 +184,8 @@ const styles = StyleSheet.create({
   mediaImageContainer: {
     width: 150,
     height: 150,
-    borderRadius:12,
-    overflow:"hidden",
-    marginHorizontal:10
+    borderRadius: 12,
+    overflow: "hidden",
+    marginHorizontal: 10,
   },
 });
