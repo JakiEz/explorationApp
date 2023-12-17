@@ -19,23 +19,14 @@ const DATA = [
   {
     id: "1234",
     title: "Jackie",
-    image: require("../pics/logo.png"),
+    image: "https://www.dochord.com/wp-content/uploads/2022/01/tinn-150x150.jpg",
   },
   {
     id: "12345",
     title: "Game",
-    image: require("../pics/phone.png"),
+    image: "https://www.dochord.com/wp-content/uploads/2022/01/tinn-150x150.jpg",
   },
-  {
-    id: "123456",
-    title: "Phone",
-    image: require("../pics/pic.png"),
-  },
-  {
-    id: "123467",
-    title: "Pro",
-    image: require("../pics/propic.png"),
-  },
+ 
 ];
 
 // const back = () => {
@@ -70,12 +61,24 @@ const Home = () => {
         <Text style={{ fontSize: 30 }}>your friends are doing</Text>
       </View>
 
-      <ScrollView horizontal style={{marginLeft:40,width:"80%",backgroundColor:"black",height:30,borderRadius:15}}>
-          {DATA.map((item, index) => (
-                <Text key={index} style={{alignSelf:"center",marginLeft:50, color:"white"}}>
-                  {item.id}
-                </Text>
-              ))}
+      <ScrollView
+        horizontal
+        style={{
+          marginLeft: 40,
+          width: "80%",
+          backgroundColor: "black",
+          height: 30,
+          borderRadius: 15,
+        }}
+      >
+        {DATA.map((item, index) => (
+          <Text
+            key={index}
+            style={{ alignSelf: "center", marginLeft: 50, color: "white" }}
+          >
+            {item.id}
+          </Text>
+        ))}
       </ScrollView>
 
       {/* <View style={{width:"100%", marginBottom:20}}>
@@ -96,30 +99,42 @@ const Home = () => {
         />
       </View> */}
 
-      <FlatList
-        style={{ height: 600 }}
-        showsHorizontalScrollIndicator={false}
-        vertical
-        data={DATA}
-        renderItem={({ item }) => {
-          console.log(item.image);
-          return (
-            <Card style={{ margin: 16, borderRadius: 15 }}>
-              <Card.Cover source={{uri: item.image}} />
-
-              <Card.Content>
-                <Title>Your Card Title</Title>
-                <Paragraph>Your card content goes here.</Paragraph>
-              </Card.Content>
-            </Card>
-          );
-        }}
-      />
+      <View style={{ justifyContent: "center",backgroundColor:"green" }}>
+        <FlatList
+          style={{ height: 600,  marginTop: 30 }}
+          showsHorizontalScrollIndicator={false}
+          vertical
+          data={DATA}
+          renderItem={({ item }) => {
+            console.log(item.image);
+            return (
+              <View style={styles.card}>
+                <Image
+                  source={{ uri: item.image }}
+                  style={{ width: 300, height: 100 }}
+                />
+                <View>
+                  <Title>{item.title}</Title>
+                  <Paragraph>Your card content goes here.</Paragraph>
+                </View>
+              </View>
+            );
+          }}
+        />
+      </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  card: {
+    width: "60%",
+    height: 200,
+    backgroundColor: "grey",
+    justifyContent: "center",
+    alignItems: "center",
+    alignSelf:"center"
+  },
   p: {
     width: 500,
     height: 100,
