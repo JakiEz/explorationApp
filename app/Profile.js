@@ -15,7 +15,7 @@ export default function Profile() {
 
   const handlePress = () => {
     // Toggle the following state
-    setIsFollowing((prev) => !prev);
+    setIsFollowing((state) => !state);
 
     // Update the follower count based on the current following state
     setFollowerCount((prevCount) => (isFollowing ? prevCount - 1 : prevCount + 1));
@@ -187,5 +187,6 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     overflow: "hidden",
     marginHorizontal: 10,
+    marginTop:20
   },
 });

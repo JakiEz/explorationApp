@@ -1,7 +1,3 @@
 module.exports = {
-    
-    config: {
-      
-      fontLinking: true,
-    },
-  };
+  assets: ['./assets/fonts'],
+};
