@@ -11,19 +11,20 @@ import {
   ImageBackground,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { router, Link } from "expo-router";
+import { useRouter, router, Link } from "expo-router";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useFonts } from "expo-font";
 import { AntDesign } from "@expo/vector-icons";
 import { Card, Title, Paragraph } from "react-native-paper";
 import { font } from "../font.js";
+import { LinearGradient } from "expo-linear-gradient";
 
 const DATA = [
   {
     id: "1234",
     title: "Jackie",
     image:
-      "https://www.dochord.com/wp-content/uploads/2022/01/tinn-150x150.jpg",
+      "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     Catetgory: "Food",
   },
@@ -31,9 +32,17 @@ const DATA = [
     id: "12345",
     title: "Game",
     image:
-      "https://www.dochord.com/wp-content/uploads/2022/01/tinn-150x150.jpg",
+      "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     Catetgory: "Game",
+  },
+  {
+    id: "123456",
+    title: "Phone",
+    image:
+      "https://www.dochord.com/wp-content/uploads/2022/01/tinn-150x150.jpg",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    Catetgory: "Animal",
   },
 ];
 
@@ -43,10 +52,7 @@ const DATA = [
 // }
 
 const Home = () => {
-  // const [fontsLoaded] = useFonts({
-  //   'Montserrat-Bold': require('../asset/fonts/Montserrat-Bold.ttf'),
-  //   'Montserrat-Regular': require('../asset/fonts/Montserrat-Regular.ttf'),
-  // })
+  // const { user } = useRouter().getCurrentParams();
   const [isFocused, setIsFocused] = useState(false);
   const data = DATA.map(({ id, title, image, description, Category }) => ({
     id,
@@ -55,6 +61,8 @@ const Home = () => {
     description,
     Category,
   }));
+
+  const router = useRouter();
   return (
     <SafeAreaView>
       {/* <TouchableOpacity style={styles.button}>
@@ -84,13 +92,22 @@ const Home = () => {
           </Text>
         </View>
         <View style={{ marginRight: 30, marginTop: 10 }}>
-          
+          <TouchableOpacity
+            onPress={() => router.push("/Profile")}
+            style={{
+              width: 50,
+              height: 50,
+              borderRadius: 35,
+              backgroundColor: "green",
+            }}
+          >
             <Image
               // key={item.id}
-              style={{ width: 50, height: 50, borderRadius: 35 }}
-              source={{uri:data.image}}
+              style={{ backgroundColor: "blue" }}
+              source={{ uri: data.image }}
             />
-          
+          </TouchableOpacity>
+
           {/* <Ionicons name="person-sharp" size={34} color="black" /> */}
         </View>
         {/* <AntDesign name="search1" size={24} color="black" /> */}
@@ -108,24 +125,34 @@ const Home = () => {
         }}
       >
         {DATA.map((item, index) => (
-          <TouchableOpacity style={{ alignSelf: "center" }}>
-            <Text
-              key={index}
-              style={{ fontSize: 25, alignSelf: "center", marginLeft: 30 }}
-            >
-              {item.Catetgory}      |
-            </Text>
-          </TouchableOpacity>
+          <View style={{ flexDirection: "row" }}>
+            <TouchableOpacity style={{ alignSelf: "center" }}>
+              <Text
+                key={index}
+                style={{ fontSize: 25, alignSelf: "center", marginLeft: 30 }}
+              >
+                {item.Catetgory}
+              </Text>
+            </TouchableOpacity>
+            <View
+              style={{
+                width: 1,
+                height: 25,
+                backgroundColor: "black",
+                marginLeft: 30,
+              }}
+            />
+          </View>
         ))}
       </ScrollView>
 
-      <View style={{ justifyContent: "center", backgroundColor: "green" }}>
+      <View style={{ justifyContent: "center" }}>
         <FlatList
           style={{ height: 400, marginTop: 0 }}
           showsHorizontalScrollIndicator={false}
           horizontal
           data={DATA}
-          renderItem={({ item }) => {
+          renderItem={({ item, index }) => {
             console.log(item.image);
             return (
               <View style={styles.card}>
@@ -134,10 +161,32 @@ const Home = () => {
                   style={styles.backgroundImage}
                 />
                 <View
+                  key={item.id}
+                  style={{
+                    width: 34,
+                    height: 24,
+                    borderRadius: 15,
+                    backgroundColor: "green",
+                    position: "absolute",
+                    top: 10,
+                    right: 10,
+                  }}
+                >
+                  <Text style={{ position: "absolute", top: -10 }}>
+                    {index + 1}
+                  </Text>
+                  <Text>{}</Text>
+                </View>
+                <View style={styles.container}>
+                  <LinearGradient
+                    colors={["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 1)"]}
+                    style={styles.gradientBox}
+                  />
+                </View>
+                <View
                   style={{
                     width: 230,
                     height: 100,
-                    backgroundColor: "white",
                     borderRadius: 30,
                     marginBottom: 20,
                   }}
@@ -147,16 +196,18 @@ const Home = () => {
                       marginTop: 10,
                       marginLeft: 10,
                       fontSize: 20,
+                      color: "white",
                       fontWeight: "bold",
                     }}
                   >
                     {item.title}
                   </Title>
-                  <Paragraph style={{ marginLeft: 10, fontSize: 10 }}>
+                  <Paragraph
+                    style={{ color: "white", marginLeft: 10, fontSize: 10 }}
+                  >
                     {item.description}
                   </Paragraph>
                 </View>
-                <View></View>
               </View>
             );
           }}
@@ -167,6 +218,17 @@ const Home = () => {
 };
 
 const styles = StyleSheet.create({
+  gradientBox: {
+    width: 250,
+    height: 250,
+    borderRadius: 35,
+    position: "absolute",
+  },
+  container: {
+    borderRadius: 15,
+    justifyContent: "center",
+    alignItems: "center",
+  },
   card: {
     width: 250,
     height: 350,
@@ -174,7 +236,7 @@ const styles = StyleSheet.create({
     // backgroundColor: "grey",
     marginLeft: 20,
     alignItems: "center",
-    alignSelf: "center",
+    // alignSelf: "center",
     margiRight: 20,
   },
   backgroundImage: {
@@ -215,7 +277,6 @@ const styles = StyleSheet.create({
     width: 50,
     backgroundColor: "green",
   },
-
   cat: {
     width: "100%",
     height: 20,

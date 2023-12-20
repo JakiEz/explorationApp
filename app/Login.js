@@ -12,7 +12,7 @@ import {
   Platform,
   ScrollView,
 } from 'react-native';
-import { Link } from 'expo-router';
+import { useRouter,Link } from 'expo-router';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { Ionicons } from '@expo/vector-icons';
 import {saveUserData} from '../storage.js';
@@ -21,25 +21,24 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isPasswordShown, setIsPasswordShown] = useState(false);
+  const router = useRouter();
+
+  // const handleLogin = () => {
+  //   axios.post('http://localhost:3000/api/authenticate', {
+  //     username,
+  //     password
+  //   })
+  //   .then((response) => {
+  //     router.replace('/Home', { user: response.data });
+  //   })
+  //   .catch((error) => {
+  //     console.error(error);
+  //   });
+  // };
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
-      <TouchableOpacity style={styles.button}>
-            <Link
-              href="./Profile"
-              style={{
-                textAlign: 'center',
-                justifyContent: 'center',
-                fontSize: 18,
-                color: Colors.white,
-                fontWeight: 'bold',
-              }}
-            >
-              go profile
-            </Link>
-          </TouchableOpacity>
-
           <TouchableOpacity style={styles.button}>
             <Link
               href="/post"
@@ -54,6 +53,18 @@ const Login = () => {
               go post
             </Link>
           </TouchableOpacity>
+          <Link
+              href="/Home"
+              style={{
+                textAlign: 'center',
+                justifyContent: 'center',
+                fontSize: 18,
+                color: Colors.white,
+                fontWeight: 'bold',
+              }}
+            >
+              go home
+            </Link>
         <KeyboardAvoidingView
           style={styles.flexStyle}
           enabled
@@ -67,7 +78,7 @@ const Login = () => {
           <View style={styles.form}>
             <TextInput
               placeholder="Enter your email address"
-              placeholderTextColor={Colors.black}
+              placeholderTextColor={'grey'}
               keyboardType="email-address"
               style={styles.input}
             />
@@ -77,8 +88,9 @@ const Login = () => {
 
           <View style={styles.form}>
             <TextInput
+              
               placeholder="Enter your password"
-              placeholderTextColor={Colors.black}
+              placeholderTextColor={'grey'}
               secureTextEntry={isPasswordShown}
               style={styles.input}
             />
@@ -87,16 +99,15 @@ const Login = () => {
               style={styles.eyeIcon}
             >
               {isPasswordShown == true ? (
-                <Ionicons name="eye-off" size={24} color={Colors.black} />
+                <Ionicons name="eye-off" size={24} color={'white'} />
               ) : (
-                <Ionicons name="eye" size={24} color={Colors.black} />
+                <Ionicons name="eye" size={24} color={'white'} />
               )}
             </TouchableOpacity>
           </View>
 
-          <TouchableOpacity style={styles.button}>
-            <Link
-              href="/Home"
+          <TouchableOpacity onPress={()=>{router.push("/Home")}}style={styles.button}>
+            <Text
               style={{
                 textAlign: 'center',
                 justifyContent: 'center',
@@ -106,11 +117,11 @@ const Login = () => {
               }}
             >
               LogIn
-            </Link>
+            </Text>
           </TouchableOpacity>
 
           <View style={styles.signup}>
-            <Text style={{ fontSize: 16 }}>Don't have an account?</Text>
+            <Text style={{ fontSize: 16,color:'white' }}>Don't have an account? </Text>
             <Link
               style={{
                 fontSize: 16,
@@ -119,7 +130,7 @@ const Login = () => {
               }}
               href="/Register"
             >
-              Sign up
+                       Sign up
             </Link>
           </View>
         </KeyboardAvoidingView>
@@ -131,6 +142,7 @@ const Login = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:"black"
   },
   flexStyle: {
     flex: 1,
@@ -149,6 +161,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 40,
     fontWeight: 'bold',
+    color:'white'
   },
   label: {
     fontSize: 16,
@@ -156,36 +169,40 @@ const styles = StyleSheet.create({
     marginVertical: 7,
     marginTop: 30,
     marginLeft: 60,
+    color:'white'
   },
   form: {
     width: '70%',
+    color:'white',
     height: 62,
-    borderColor: Colors.black,
+    borderColor: '#3CF1ED',
     borderWidth: 1,
-    borderRadius: 8,
+    borderRadius: 15,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 22,
-    marginBottom: -10,
+    marginBottom: 10,
     flexDirection: 'row',
     position: 'relative',
     marginLeft:55
   },
   input: {
     flex: 1,
+    borderColor: "#3CF1ED "
   },
   eyeIcon: {
     position: 'absolute',
     right: 10,
     top: 20,
+
   },
   button: {
     alignSelf: 'center',
     justifyContent: 'center',
     marginTop: 30,
-    width: 150,
-    height: 30,
-    borderRadius: 15,
+    width: 80,
+    height: 40,
+    borderRadius: 35,
     backgroundColor: 'green',
   },
   signup: {
