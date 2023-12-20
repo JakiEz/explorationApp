@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import logo from '../pics/logo.png';
+import logo from '../pics/logon.png';
+import logo2 from '../pics/more.png';
 import {
   StyleSheet,
   TouchableOpacity,
@@ -22,42 +23,17 @@ const Login = () => {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
 
   return (
-    <SafeAreaView style={styles.container}>
+    
       <ScrollView contentContainerStyle={styles.scrollContainer}>
-      <TouchableOpacity style={styles.button}>
-            <Link
-              href="./Profile"
-              style={{
-                textAlign: 'center',
-                justifyContent: 'center',
-                fontSize: 18,
-                color: Colors.white,
-                fontWeight: 'bold',
-              }}
-            >
-              go profile
-            </Link>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.button}>
-            <Link
-              href="/post"
-              style={{
-                textAlign: 'center',
-                justifyContent: 'center',
-                fontSize: 18,
-                color: Colors.white,
-                fontWeight: 'bold',
-              }}
-            >
-              go post
-            </Link>
-          </TouchableOpacity>
+     
         <KeyboardAvoidingView
           style={styles.flexStyle}
           enabled
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         >
+          <View style={styles.top2}>
+            <Image source={logo2} style={styles.img2} />
+          </View>
           <View style={styles.top}>
             <Image source={logo} style={styles.img} />
           </View>
@@ -66,7 +42,7 @@ const Login = () => {
           <View style={styles.form}>
             <TextInput
               placeholder="Enter your email address"
-              placeholderTextColor={Colors.black}
+              placeholderTextColor='#585858'
               keyboardType="email-address"
               style={styles.input}
             />
@@ -77,7 +53,7 @@ const Login = () => {
           <View style={styles.form}>
             <TextInput
               placeholder="Enter your password"
-              placeholderTextColor={Colors.black}
+              placeholderTextColor='#585858'
               secureTextEntry={isPasswordShown}
               style={styles.input}
             />
@@ -86,9 +62,9 @@ const Login = () => {
               style={styles.eyeIcon}
             >
               {isPasswordShown == true ? (
-                <Ionicons name="eye-off" size={24} color={Colors.black} />
+                <Ionicons name="eye-off" size={24} color='#585858' />
               ) : (
-                <Ionicons name="eye" size={24} color={Colors.black} />
+                <Ionicons name="eye" size={24} color='#585858' />
               )}
             </TouchableOpacity>
           </View>
@@ -109,12 +85,13 @@ const Login = () => {
           </TouchableOpacity>
 
           <View style={styles.signup}>
-            <Text style={{ fontSize: 16 }}>Don't have an account?</Text>
+            <Text style={{ fontSize: 16,color:'#585858' }}>Don't have an account?</Text>
             <Link
               style={{
                 fontSize: 16,
                 color: Colors.primary,
                 fontWeight: 'bold',
+                marginHorizontal:6
               }}
               href="/Register"
             >
@@ -123,31 +100,30 @@ const Login = () => {
           </View>
         </KeyboardAvoidingView>
       </ScrollView>
-    </SafeAreaView>
+    
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   flexStyle: {
     flex: 1,
   },
   top: {
     alignItems: 'center',
+    marginTop:-200
   },
   img: {
     height: 150,
     width: 150,
     alignSelf: 'center',
-    marginTop: 40,
+    
   },
   heading: {
     marginTop: 10,
     textAlign: 'center',
-    fontSize: 40,
+    fontSize: 37,
     fontWeight: 'bold',
+    color:'white'
   },
   label: {
     fontSize: 16,
@@ -155,20 +131,22 @@ const styles = StyleSheet.create({
     marginVertical: 7,
     marginTop: 30,
     marginLeft: 60,
+    color:'white'
   },
   form: {
     width: '70%',
     height: 62,
-    borderColor: Colors.black,
+    borderColor: '#282828',
     borderWidth: 1,
-    borderRadius: 8,
+    borderRadius: 20,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 22,
     marginBottom: -10,
     flexDirection: 'row',
     position: 'relative',
-    marginLeft:55
+    marginLeft:55,
+    backgroundColor:'#282828'
   },
   input: {
     flex: 1,
@@ -177,14 +155,15 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 10,
     top: 20,
+    
   },
   button: {
     alignSelf: 'center',
     justifyContent: 'center',
     marginTop: 30,
-    width: 150,
-    height: 30,
-    borderRadius: 15,
+    width: 100,
+    height: 45,
+    borderRadius: 30,
     backgroundColor: 'green',
   },
   signup: {
@@ -195,6 +174,19 @@ const styles = StyleSheet.create({
   scrollContainer: {
     flexGrow: 1,
     justifyContent: 'space-between',
+    backgroundColor:'#181818'
+  },
+  img2: {
+    height: 400,
+    width: 650,
+    marginLeft:106,
+  
+    
+  },
+  top2: {
+    alignItems: 'center',
+    marginTop :-73
+    
   },
 });
 

@@ -29,7 +29,7 @@ const DATA = [
   {
     id: "123456",
     title: "Phone",
-    image: require("../pics/pic.png"),
+    image: require("../pics/pic.jpg"),
   },
   {
     id: "123467",
