@@ -126,7 +126,7 @@ const Login = () => {
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity onPress={handleLogin} style={styles.button}>
+        <TouchableOpacity onPress={handleLoginLogin} style={styles.button}>
           <Text
             style={{
               textAlign: "center",

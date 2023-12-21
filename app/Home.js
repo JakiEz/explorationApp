@@ -192,7 +192,7 @@ const Home = () => {
                 // key={item.id}
                 style={{width: 70,
                   height: 70,borderRadius: 35,}}
-                source={{ uri: "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain" }}
+                  source={require("../pics/phone.png")}
               />
             </TouchableOpacity>
 
