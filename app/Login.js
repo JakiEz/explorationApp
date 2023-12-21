@@ -40,32 +40,6 @@ const Login = () => {
   return (
     
       <ScrollView contentContainerStyle={styles.scrollContainer}>
-          <TouchableOpacity style={styles.button}>
-            <Link
-              href="/post"
-              style={{
-                textAlign: 'center',
-                justifyContent: 'center',
-                fontSize: 18,
-                color: Colors.white,
-                fontWeight: 'bold',
-              }}
-            >
-              go post
-            </Link>
-          </TouchableOpacity>
-          <Link
-              href="/Home"
-              style={{
-                textAlign: 'center',
-                justifyContent: 'center',
-                fontSize: 18,
-                color: Colors.white,
-                fontWeight: 'bold',
-              }}
-            >
-              go home
-            </Link>
         <KeyboardAvoidingView
           style={styles.flexStyle}
           enabled
@@ -82,7 +56,7 @@ const Login = () => {
           <View style={styles.form}>
             <TextInput
               placeholder="Enter your email address"
-              placeholderTextColor={Colors.black}
+              placeholderTextColor={'grey'}
               keyboardType="email-address"
               style={styles.input}
             />
@@ -94,7 +68,7 @@ const Login = () => {
             <TextInput
               
               placeholder="Enter your password"
-              placeholderTextColor={Colors.black}
+              placeholderTextColor={'grey'}
               secureTextEntry={isPasswordShown}
               style={styles.input}
             />
@@ -103,9 +77,9 @@ const Login = () => {
               style={styles.eyeIcon}
             >
               {isPasswordShown == true ? (
-                <Ionicons name="eye-off" size={24} color={Colors.black} />
+                <Ionicons name="eye-off" size={24} color={'white'} />
               ) : (
-                <Ionicons name="eye" size={24} color={Colors.black} />
+                <Ionicons name="eye" size={24} color={'white'} />
               )}
             </TouchableOpacity>
           </View>
@@ -116,7 +90,7 @@ const Login = () => {
                 textAlign: 'center',
                 justifyContent: 'center',
                 fontSize: 18,
-                color: Colors.white,
+                color: 'white',
                 fontWeight: 'bold',
               }}
             >
@@ -125,7 +99,7 @@ const Login = () => {
           </TouchableOpacity>
 
           <View style={styles.signup}>
-            <Text style={{ fontSize: 16 }}>Don't have an account?</Text>
+            <Text style={{ fontSize: 16, color:'white'}}>Don't have an account?</Text>
             <Link
               style={{
                 fontSize: 16,
@@ -150,6 +124,7 @@ const styles = StyleSheet.create({
   },
   flexStyle: {
     flex: 1,
+    backgroundColor:'#282828'
   },
   top: {
     alignItems: 'center',
@@ -180,9 +155,9 @@ const styles = StyleSheet.create({
     width: '70%',
     color:'white',
     height: 62,
-    borderColor: Colors.black,
+    borderColor: '#3CF1ED',
     borderWidth: 1,
-    borderRadius: 8,
+    borderRadius: 16,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 22,
@@ -194,7 +169,8 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    borderColor: "#3CF1ED "
+    color:"grey",
+    borderColor:'#3CF1ED'
   },
   eyeIcon: {
     position: 'absolute',
@@ -205,10 +181,10 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     marginTop: 30,
-    width: 150,
-    height: 30,
-    borderRadius: 15,
-    backgroundColor: 'green',
+    width: 100,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: '#3CF1ED',
   },
   signup: {
     marginTop: 30,
@@ -216,8 +192,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   scrollContainer: {
-    flexGrow: 1,
-    justifyContent: 'space-between',
+    // flexGrow: 1,
+    // justifyContent: 'space-between',
     backgroundColor:'#181818'
   },
   img2: {
