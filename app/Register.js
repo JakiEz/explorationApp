@@ -22,6 +22,7 @@ export default function Register() {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
   const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const apiUrl = "http://192.168.1.50:3000/user/create";
@@ -30,10 +31,11 @@ export default function Register() {
     // Prepare the data
     const data = {
       email: email,
+      username: username,
       password: password,
       phone: phone,
     };
-    console.log(data.email, data.password, data.phone);
+    console.log(data.email, data.username, data.password, data.phone);
 
     try {
       const response = await axios.post(apiUrl, data);
@@ -70,7 +72,7 @@ export default function Register() {
           </View>
 
           {/*email */}
-          <View style={{ marginBottom: 12 }}>
+          <View style={{ marginBottom: 0 }}>
             <Text
               style={{
                 fontSize: 16,
@@ -104,6 +106,48 @@ export default function Register() {
                 keyboardType="email-address"
                 value={email}
                 onChangeText={(text) => setEmail(text)}
+                style={{
+                  width: "100%",
+                  color: "white",
+                }}
+              />
+            </View>
+          </View>
+
+          <View style={{ marginBottom: 12 }}>
+            <Text
+              style={{
+                fontSize: 16,
+                fontWeight: "400",
+                marginVertical: 15,
+                marginTop: 30,
+                marginLeft: 35,
+                color: "white",
+              }}
+            >
+              Username
+            </Text>
+
+            <View
+              style={{
+                width: "80%",
+                height: 62,
+                borderColor: "#3CF1ED",
+                borderWidth: 1,
+                borderRadius: 15,
+                alignItems: "center",
+                alignSelf: "center",
+                justifyContent: "center",
+                padding: 22,
+                backgroundColor: "#282828",
+              }}
+            >
+              <TextInput
+                placeholder="Enter your username"
+                placeholderTextColor={"grey"}
+                // keyboardType="email-address"
+                value={username}
+                onChangeText={(text) => setUsername(text)}
                 style={{
                   width: "100%",
                   color: "white",
