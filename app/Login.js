@@ -24,126 +24,81 @@ const Login = () => {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
   const router = useRouter();
 
-  // const handleLogin = () => {
-  //   axios.post('http://localhost:3000/api/authenticate', {
-  //     username,
-  //     password
-  //   })
-  //   .then((response) => {
-  //     router.replace('/Home', { user: response.data });
-  //   })
-  //   .catch((error) => {
-  //     console.error(error);
-  //   });
-  // };
-
   return (
-    
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
-<<<<<<< HEAD
-=======
-          <TouchableOpacity style={styles.button}>
-            <Link
-              href="/post"
-              style={{
-                textAlign: 'center',
-                justifyContent: 'center',
-                fontSize: 18,
-                color: Colors.white,
-                fontWeight: 'bold',
-              }}
-            >
-              go post
-            </Link>
+    <KeyboardAvoidingView
+      style={styles.flexStyle}
+      enabled
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+    >
+      <ScrollView bounces={false} >
+        <View style={styles.top2}>
+          <Image source={logo2} style={styles.img2} />
+        </View>
+        <View style={styles.top}>
+          <Image source={logo} style={styles.img} />
+        </View>
+        <Text style={styles.heading}>Login</Text>
+        <Text style={styles.label}>Email address</Text>
+        <View style={styles.form}>
+          <TextInput
+            placeholder="Enter your email address"
+            placeholderTextColor={'grey'}
+            keyboardType="email-address"
+            style={styles.input}
+          />
+        </View>
+
+        <Text style={styles.label}>Password</Text>
+
+        <View style={styles.form}>
+          <TextInput
+            placeholder="Enter your password"
+            placeholderTextColor={'grey'}
+            secureTextEntry={isPasswordShown}
+            style={styles.input}
+          />
+          <TouchableOpacity
+            onPress={() => setIsPasswordShown(!isPasswordShown)}
+            style={styles.eyeIcon}
+          >
+            {isPasswordShown == true ? (
+              <Ionicons name="eye-off" size={24} color={'white'} />
+            ) : (
+              <Ionicons name="eye" size={24} color={'white'} />
+            )}
           </TouchableOpacity>
+        </View>
+
+        <TouchableOpacity onPress={()=>{router.push("/Home")}}style={styles.button}>
+          <Text
+            style={{
+              textAlign: 'center',
+              justifyContent: 'center',
+              fontSize: 18,
+              color: 'white',
+              fontWeight: 'bold',
+            }}
+          >
+            LogIn
+          </Text>
+        </TouchableOpacity>
+
+        <View style={styles.signup}>
+          <Text style={{ fontSize: 16, color:'white'}}>Don't have an account?</Text>
           <Link
-              href="/Home"
-              style={{
-                textAlign: 'center',
-                justifyContent: 'center',
-                fontSize: 18,
-                color: Colors.white,
-                fontWeight: 'bold',
-              }}
-            >
-              go h
-            </Link>
->>>>>>> e5b36eafb05798955c69cdebb6ca6678c38548ad
-        <KeyboardAvoidingView
-          style={styles.flexStyle}
-          enabled
-          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        >
-          <View style={styles.top2}>
-            <Image source={logo2} style={styles.img2} />
-          </View>
-          <View style={styles.top}>
-            <Image source={logo} style={styles.img} />
-          </View>
-          <Text style={styles.heading}>Login</Text>
-          <Text style={styles.label}>Email address</Text>
-          <View style={styles.form}>
-            <TextInput
-              placeholder="Enter your email address"
-              placeholderTextColor={'grey'}
-              keyboardType="email-address"
-              style={styles.input}
-            />
-          </View>
-
-          <Text style={styles.label}>Password</Text>
-
-          <View style={styles.form}>
-            <TextInput
-              
-              placeholder="Enter your password"
-              placeholderTextColor={'grey'}
-              secureTextEntry={isPasswordShown}
-              style={styles.input}
-            />
-            <TouchableOpacity
-              onPress={() => setIsPasswordShown(!isPasswordShown)}
-              style={styles.eyeIcon}
-            >
-              {isPasswordShown == true ? (
-                <Ionicons name="eye-off" size={24} color={'white'} />
-              ) : (
-                <Ionicons name="eye" size={24} color={'white'} />
-              )}
-            </TouchableOpacity>
-          </View>
-
-          <TouchableOpacity onPress={()=>{router.push("/Home")}}style={styles.button}>
-            <Text
-              style={{
-                textAlign: 'center',
-                justifyContent: 'center',
-                fontSize: 18,
-                color: 'white',
-                fontWeight: 'bold',
-              }}
-            >
-              LogIn
-            </Text>
-          </TouchableOpacity>
-
-          <View style={styles.signup}>
-            <Text style={{ fontSize: 16, color:'white'}}>Don't have an account?</Text>
-            <Link
-              style={{
-                fontSize: 16,
-                color: Colors.primary,
-                fontWeight: 'bold',
-                marginHorizontal:6
-              }}
-              href="/Register"
-            >
-                       Sign up
-            </Link>
-          </View>
-        </KeyboardAvoidingView>
+            style={{
+              fontSize: 16,
+              color: Colors.primary,
+              fontWeight: 'bold',
+              marginHorizontal:6
+            }}
+            href="/Register"
+          >
+            Sign up
+          </Link>
+        </View>
       </ScrollView>
-    
+    </KeyboardAvoidingView>
   );
 };
 
@@ -221,7 +176,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   scrollContainer: {
-    // flexGrow: 1,
+    height: "100%",
     // justifyContent: 'space-between',
     backgroundColor:'#181818'
   },
