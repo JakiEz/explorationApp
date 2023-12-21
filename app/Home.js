@@ -132,10 +132,9 @@ const DATA = [
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     Category: "Game",
   },
-  
 ];
 
-const categories = ["Food","Game","Animal","Cars","Toys"]
+const categories = ["Food", "Game", "Animal", "Cars", "Toys"];
 
 // const back = () => {
 //   console.log("back");
@@ -160,223 +159,151 @@ const Home = () => {
   const router = useRouter();
   return (
     <SafeAreaView>
-       {/* <TouchableOpacity style={styles.navBar}>
+      {/* <TouchableOpacity style={styles.navBar}>
         <View>
           
         </View>
 
       </TouchableOpacity> */}
-      <ScrollView 
-      showsVerticalScrollIndicator={false}>
-      <View style={styles.p}>
-        <View>
-          <Text
-            style={{ fontSize: 30, fontWeight: "bold" }}
-            font={font.customText}
-          >
-            Explore
-          </Text>
-          <Text style={{ fontSize: 30 }} font={font.customText}>
-            photos
-          </Text>
-        </View>
-        <View style={{ marginRight: 30, marginTop: 10 }}>
-          <TouchableOpacity
-            onPress={() => router.push("/Profile")}
-            style={{
-              width: 50,
-              height: 50,
-              borderRadius: 35,
-              backgroundColor: "green",
-            }}
-          >
-            <Image
-              // key={item.id}
-              
-              source={{ uri: data.image }}
-            />
-          </TouchableOpacity>
-
-          {/* <Ionicons name="person-sharp" size={34} color="black" /> */}
-        </View>
-        {/* <AntDesign name="search1" size={24} color="black" /> */}
-      </View>
-
-      <ScrollView
-        showsHorizontalScrollIndicator={false}
-        horizontal
-        style={{
-          // marginLeft: 40,
-          width: "100%",
-          // backgroundColor: "blue",
-          height: 50,
-          borderRadius: 15,
-          marginTop: 40,
-          paddingTop:10
-        }}
-      >
-        {categories.map((category, index) => (
-          <View style={{ flexDirection: "row", alignItem: "center" }}>
-            <TouchableOpacity
-              style={{ alignSelf: "center",flexDirection:"column",alignItems:"center" }}
-              onPress={() => setSelectedCategory(category)}
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.p}>
+          <View>
+            <Text
+              style={{ fontSize: 30, fontWeight: "bold" }}
+              font={font.customText}
             >
-              <Text
-                key={index}
-                style={{ fontSize: 25, alignSelf: "center", marginLeft: 20 }}
-              >
-                {category}
-              </Text>
-              {selectedCategory === category && (
-              <View
-                style={{
-                  width: 8,
-                  height: 8,
-                  borderRadius: 50,
-                  backgroundColor: "black",
-                  position: "absolute",
-                  top: 30,
-                  right:20
-                  
-                }}
-              ></View>
-            )}
-            </TouchableOpacity>
-            
-            <View
-              style={{
-                width: 3,
-                height: 30,
-                borderRadius: 50,
-                backgroundColor: "black",
-                // position: "absolute",
-                marginLeft: 20,
-              }}
-            ></View>
+              Explore
+            </Text>
+            <Text style={{ fontSize: 30 }} font={font.customText}>
+              photos
+            </Text>
           </View>
-        ))}
-      </ScrollView>
+          <View style={{ marginRight: 30, marginTop: 10 }}>
+            <TouchableOpacity
+              onPress={() => router.push("/Profile")}
+              style={{
+                width: 50,
+                height: 50,
+                borderRadius: 35,
+                backgroundColor: "green",
+              }}
+            >
+              <Image
+                // key={item.id}
 
-      <View style={{ justifyContent: "center" }}>
-        <FlatList
-          style={{ height: 400, marginBottom: 0 }}
+                source={{ uri: data.image }}
+              />
+            </TouchableOpacity>
+
+            {/* <Ionicons name="person-sharp" size={34} color="black" /> */}
+          </View>
+          {/* <AntDesign name="search1" size={24} color="black" /> */}
+        </View>
+
+        <ScrollView
           showsHorizontalScrollIndicator={false}
           horizontal
-          data={filteredData}
-          renderItem={({ item, index }) => {
-            console.log(item.image);
-            return (
-              <View style={styles.card}>
-                <Image
-                  source={{ uri: item.image }}
-                  style={styles.backgroundImage}
-                />
-                <View
-                  key={item.id}
-                  style={{
-                    width: 34,
-                    height: 24,
-                    borderRadius: 15,
-                    backgroundColor: "green",
-                    position: "absolute",
-                    top: 10,
-                    right: 10,
-                  }}
+          style={{
+            // marginLeft: 40,
+            width: "100%",
+            // backgroundColor: "blue",
+            height: 50,
+            borderRadius: 15,
+            marginTop: 6,
+            paddingTop: 10,
+          }}
+        >
+          {categories.map((category, index) => (
+            <View style={{ flexDirection: "row", alignItem: "center" }}>
+              <TouchableOpacity
+                style={{
+                  alignSelf: "center",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+                onPress={() => setSelectedCategory(category)}
+              >
+                <Text
+                  key={index}
+                  style={{ fontSize: 25, alignSelf: "center", marginLeft: 20 }}
                 >
-                  <Text style={{ position: "absolute", top: -10 }}>
-                    {index + 1}
-                  </Text>
-                  <Text>{}</Text>
-                </View>
-                <View style={styles.container}>
-                  <LinearGradient
-                    colors={["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 1)"]}
-                    style={styles.gradientBox}
-                  />
-                </View>
-                <View
-                  style={{
-                    width: 230,
-                    height: 100,
-                    borderRadius: 30,
-                    marginBottom: 20,
-                  }}
-                >
-                  <Title
+                  {category}
+                </Text>
+                {selectedCategory === category && (
+                  <View
                     style={{
-                      marginTop: 10,
-                      marginLeft: 10,
-                      fontSize: 20,
-                      color: "white",
-                      fontWeight: "bold",
+                      width: 8,
+                      height: 8,
+                      borderRadius: 50,
+                      backgroundColor: "black",
+                      position: "absolute",
+                      top: 30,
+                      right: 20,
+                      marginRight:7
+                    }}
+                  ></View>
+                )}
+              </TouchableOpacity>
+
+              <View
+                style={{
+                  width: 3,
+                  height: 30,
+                  borderRadius: 50,
+                  backgroundColor: "black",
+                  // position: "absolute",
+                  marginLeft: 20,
+                }}
+              ></View>
+            </View>
+          ))}
+        </ScrollView>
+
+        <View style={{ justifyContent: "center" }}>
+          <FlatList
+            style={{ height: 400, marginBottom: 0 }}
+            showsHorizontalScrollIndicator={false}
+            horizontal
+            data={filteredData}
+            renderItem={({ item, index }) => {
+              console.log(item.image);
+              return (
+                <View style={styles.card}>
+                  <Image
+                    source={{ uri: item.image }}
+                    style={styles.backgroundImage}
+                  />
+                  <View
+                    key={item.id}
+                    style={{
+                      width: 34,
+                      height: 24,
+                      borderRadius: 15,
+                      backgroundColor: "green",
+                      position: "absolute",
+                      top: 10,
+                      right: 10,
                     }}
                   >
-                    {item.title}
-                  </Title>
-                  <Paragraph
-                    style={{ color: "white", marginLeft: 10, fontSize: 10 }}
+                    <Text style={{ position: "absolute", top: -10 }}>
+                      {index + 1}
+                    </Text>
+                    <Text>{}</Text>
+                  </View>
+                  <View style={styles.container}>
+                    <LinearGradient
+                      colors={["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 1)"]}
+                      style={styles.gradientBox}
+                    />
+                  </View>
+                  <View
+                    style={{
+                      width: 230,
+                      height: 100,
+                      borderRadius: 30,
+                      marginBottom: 20,
+                    }}
                   >
-                    {item.description}
-                  </Paragraph>
-                </View>
-              </View>
-            );
-          }}
-        />
-      </View>
-      <TouchableOpacity style={styles.navBar}>
-        <View>
-          
-        </View>
-
-      </TouchableOpacity>
-      <View style={{marginTop:40,width:"100%",alignItems:"center"}}>
-      <FlatList
-          style={{marginBottom: 0 }}
-          showsVerticalScrollIndicator={false}
-          vertical
-          data={filteredData.slice(9)} 
-          renderItem={({ item, index }) => {
-            console.log(item.image);
-            return (
-              <View style={{width:300,marginTop:50,backgroundColor:"green"}}>
-                <Image
-                  source={{ uri: item.image }}
-                  style={styles.backgroundImage}
-                />
-                <View
-                  key={item.id}
-                  style={{
-                    width: 34,
-                    height: 24,
-                    borderRadius: 15,
-                    backgroundColor: "green",
-                    position: "absolute",
-                    top: 10,
-                    right: 10,
-                  }}
-                >
-                  <Text style={{ position: "absolute", top: -10 }}>
-                    {index + 1}
-                  </Text>
-                  <Text>{}</Text>
-                </View>
-                <View style={{width:300,marginTop:20}}>
-                  <LinearGradient
-                    colors={["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 1)"]}
-                    style={styles.gradientBelow}
-                  />
-                </View>
-                <View
-                  style={{
-                    width: 230,
-                    height: 100,
-                    borderRadius: 30,
-                    marginBottom: 20,
-                    justifyContent:"flex-end"
-                  }}
-                >
-                  <TouchableOpacity onPress={()=>router.push(`/${item.title}`)}>
                     <Title
                       style={{
                         marginTop: 10,
@@ -388,19 +315,117 @@ const Home = () => {
                     >
                       {item.title}
                     </Title>
-
-                  </TouchableOpacity>
-                  <Paragraph
-                    style={{ color: "white", marginLeft: 10, fontSize: 10 }}
-                  >
-                    {item.description}
-                  </Paragraph>
+                    <Paragraph
+                      style={{ color: "white", marginLeft: 10, fontSize: 10 }}
+                    >
+                      {item.description}
+                    </Paragraph>
+                  </View>
                 </View>
-              </View>
-            );
-          }}
-        />
-      </View>
+              );
+            }}
+          />
+        </View>
+        <TouchableOpacity style={styles.navBar}>
+          <View></View>
+        </TouchableOpacity>
+
+
+
+
+
+        <View>
+          <TouchableOpacity
+            style={styles.button2}
+            onPress={() => router.push("/post")}
+          >
+            <Ionicons name="add-circle-sharp" size={70} color="#282828" />
+          </TouchableOpacity>
+        </View>
+
+
+        <ScrollView>
+        <View style={{ marginTop: -20, width: "100%", alignItems: "center" }}>
+          <FlatList
+            showsVerticalScrollIndicator={false}
+            vertical
+            data={filteredData.slice(9)}
+            renderItem={({ item, index }) => {
+              console.log(item.image);
+              return (
+                <View
+                  style={{
+                    width: 300,
+                    height:130,
+                    marginTop: 50,
+                    backgroundColor: "green",
+                  }}
+                >
+                  <Image
+                    source={{ uri: item.image }}
+                    style={styles.backgroundImage}
+                  />
+                  <View
+                    key={item.id}
+                    style={{
+                      width: 34,
+                      height: 24,
+                      borderRadius: 15,
+                      backgroundColor: "green",
+                      position: "absolute",
+                      top: 10,
+                      right: 10,
+                    }}
+                  >
+                    <Text style={{ position: "absolute", top: -10 }}>
+                      {index + 1}
+                    </Text>
+                    <Text>{}</Text>
+                  </View>
+
+                  <View style={{ width: 300, marginTop: 20 }}>
+                    <LinearGradient
+                      colors={["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 1)"]}
+                      style={styles.gradientBelow}
+                    />
+                  </View>
+
+                  <View
+                    style={{
+                      width: 230,
+                      height: 100,
+                      borderRadius: 30,
+                      marginBottom: 20,
+                      justifyContent: "flex-end",
+                    }}
+                  >
+                    <TouchableOpacity
+                      onPress={() => router.push(`/${item.title}`)}
+                    >
+                      <Title
+                        style={{
+                          marginTop: 10,
+                          marginLeft: 10,
+                          fontSize: 20,
+                          color: "white",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        {item.title}
+                      </Title>
+                    </TouchableOpacity>
+                    <Paragraph
+                      style={{ color: "white", marginLeft: 10, fontSize: 10 }}
+                    >
+                      {item.description}
+                    </Paragraph>
+                  </View>
+                </View>
+              );
+            }}
+          />
+        </View>
+        </ScrollView>
       </ScrollView>
     </SafeAreaView>
   );
@@ -414,7 +439,7 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   navBar: {
-    position: 'absolute',
+    position: "absolute",
     top: 700,
     left: 120,
     right: 120,
@@ -423,7 +448,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'blue',
     zIndex: 30,
   },
-  gradientBelow:{
+  gradientBelow: {
     width: 300,
     height: 150,
     borderRadius: 35,
@@ -489,6 +514,21 @@ const styles = StyleSheet.create({
     // backgroundColor: "blue",
     flexDirection: "row",
     // margin:20
+  },
+  button2: {
+    marginLeft: 22,
+    marginTop: 22,
+    backgroundColor: "transparent", // Set the button background color to transparent
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: "#3CF1ED",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.8,
+    shadowRadius: 4,
+    elevation: 5,
   },
 });
 
