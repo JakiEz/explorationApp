@@ -18,6 +18,7 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { Ionicons } from '@expo/vector-icons';
 import {saveUserData} from '../storage.js';
 
+
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -69,7 +70,7 @@ const Login = () => {
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity onPress={()=>{router.push("/Home")}}style={styles.button}>
+        <TouchableOpacity onPress={()=>{}}style={styles.button}>
           <Text
             style={{
               textAlign: 'center',

@@ -23,7 +23,6 @@ export default function Post() {
   const [category, setCategory] = useState("Uncategorized");
 
   useEffect(() => {
-    // Ask for permission when the component mounts
     requestPermission();
   }, []);
 
