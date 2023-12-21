@@ -297,6 +297,7 @@ const Home = () => {
                       style={styles.gradientBox}
                     />
                   </View>
+                  <TouchableOpacity onPress={()=>router.push(`/${item.title}`)}>
                   <View
                     style={{
                       width: 230,
@@ -322,6 +323,7 @@ const Home = () => {
                       {item.description}
                     </Paragraph>
                   </View>
+                  </TouchableOpacity>
                 </View>
               );
             }}
