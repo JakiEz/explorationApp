@@ -330,9 +330,9 @@ const Home = () => {
         </View>
 
       </TouchableOpacity>
-      <View style={{marginTop:40,width:"100%",backgroundColor:"green",alignItems:"center"}}>
+      <View style={{marginTop:40,width:"100%",alignItems:"center"}}>
       <FlatList
-          style={{marginBottom: 0,backgroundColor:"blue" }}
+          style={{marginBottom: 0 }}
           showsVerticalScrollIndicator={false}
           vertical
           data={filteredData.slice(9)} 
@@ -420,7 +420,7 @@ const styles = StyleSheet.create({
     right: 120,
     height: 50,
     borderRadius: 35,
-    backgroundColor: 'blue',
+    // backgroundColor: 'blue',
     zIndex: 30,
   },
   gradientBelow:{
@@ -486,7 +486,7 @@ const styles = StyleSheet.create({
   cat: {
     width: "100%",
     height: 20,
-    backgroundColor: "blue",
+    // backgroundColor: "blue",
     flexDirection: "row",
     // margin:20
   },

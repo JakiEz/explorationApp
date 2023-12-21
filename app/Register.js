@@ -23,22 +23,29 @@ export default function Register() {
   const [isChecked, setIsChecked] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [phone, setPhone] = useState('');
 
   const handleLogin = () => {
     // Prepare the data
     const data = {
       username: username,
-      password: password
+      password: password,
+      phone: phone
     };
-    console.log(data.username + data.password)
-    // Send a POST request to your server
-    axios.post('http://192.168.1.50:3000/user/create', data)
+    console.log(data.username, data.password, data.phone)
+    
+    axios.post('http://192.168.1.50:3000/user/create', data, 
+    {
+      headers: {
+         'Content-Type': 'application/json'
+      }
+     })
       .then((response) => {
         console.log('created successful:', response.data);
         // You can now store the response data or do something else with it
       })
       .catch((error) => {
-        console.error('create failed:', error);
+        console.error('create failed:', error.response);
       });
   };
 
@@ -155,6 +162,8 @@ export default function Register() {
             <TextInput
               placeholder="Enter your phone number"
               placeholderTextColor={"grey"}
+              value={phone}
+              onChangeText={(text) => setPhone(text)}
               keyboardType="numeric"
               style={{
                 width: "80%",
