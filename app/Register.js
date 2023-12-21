@@ -20,18 +20,18 @@ export default function Register() {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "black" }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#282828" }}>
        <Pressable style={{marginLeft:15,marginTop:15,width:30}}onPress={()=> router.back()}>
         <Ionicons name="chevron-back" size={30} color="white" />
       </Pressable>
       <View style={{ flex: 1, marginHorizontal: 22 }}>
-        <View style={{ marginVerticalP: 22 }}>
+        <View style={{ margin:30,marginBottom:20 }}>
           <Text
             style={{
               fontSize: 22,
               fontWeight: "bold",
               marginVertical: 12,
-              color: Colors.black,
+              color: 'white',
             }}
           >
             Create Account
@@ -39,7 +39,7 @@ export default function Register() {
           <Text
             style={{
               fontSize: 16,
-              color: Colors.black,
+              color: 'white',
             }}
           >
             Connect with your friend today!
@@ -54,6 +54,8 @@ export default function Register() {
               fontWeight: "400",
               marginVertical: 15,
               marginTop: 30,
+              marginLeft:35,
+              color:'white'
             }}
           >
             Email address
@@ -63,9 +65,9 @@ export default function Register() {
             style={{
               width: "80%",
               height: 62,
-              borderColor: Colors.black,
+              borderColor: '#3CF1ED',
               borderWidth: 1,
-              borderRadius: 8,
+              borderRadius: 15,
               alignItems: "center",
               alignSelf:"center",
               justifyContent: "center",
@@ -75,7 +77,7 @@ export default function Register() {
           >
             <TextInput
               placeholder="Enter your email address"
-              placeholderTextColor={Colors.black}
+              placeholderTextColor={'grey'}
               keyboardType="email-address"
               style={{
                 width: "100%",
@@ -94,6 +96,8 @@ export default function Register() {
               fontWeight: "400",
               marginVertical: 15,
               marginTop: 20,
+              color:'white',
+              marginLeft:38
             }}
           >
             Mobile Number
@@ -103,7 +107,7 @@ export default function Register() {
             style={{
               width: "80%",
               height: 62,
-              borderColor: Colors.black,
+              borderColor:'#3CF1ED',
               borderWidth: 1,
               borderRadius: 8,
               alignItems: "center",
@@ -118,20 +122,20 @@ export default function Register() {
           >
             <TextInput
               placeholder="+66"
-              placeholderTextColor={Colors.black}
+              placeholderTextColor={'grey'}
               keyboardType="numeric"
               style={{
                 width: "15%",
                 borderRightWidth: 1,
                 borderLeftColor: '#282828',
-                
+                paddingRight:10,
                 height: "385%",
                 borderColor:'#3CF1ED '
               }}
             />
             <TextInput
               placeholder="Enter your phone number"
-              placeholderTextColor={Colors.black}
+              placeholderTextColor={"grey"}
               keyboardType="numeric"
               style={{
                 width: "80%",
@@ -148,6 +152,8 @@ export default function Register() {
               fontWeight: "400",
               marginVertical: 15,
               marginTop: 20,
+              color:'white',
+              marginLeft:40
             }}
           >
             Password
@@ -157,17 +163,17 @@ export default function Register() {
             style={{
               width: "80%",
               height: 62,
-              borderColor: Colors.black,
+              borderColor: '#3CF1ED',
               borderWidth: 1,
-              borderRadius: 8,
-              alignItems: "center",
+              borderRadius: 18,
+              alignSelf: "center",
               justifyContent: "center",
               padding: 22,
             }}
           >
             <TextInput
               placeholder="Enter your password"
-              placeholderTextColor={Colors.black}
+              placeholderTextColor={'grey'}
               secureTextEntry={isPasswordShown}
               style={{
                 width: "100%",
@@ -181,9 +187,9 @@ export default function Register() {
               }}
             >
               {isPasswordShown == true ? (
-                <Ionicons name="eye-off" size={24} color={Colors.black} />
+                <Ionicons name="eye-off" size={24} color={'white'} />
               ) : (
-                <Ionicons name="eye" size={24} color={Colors.black} />
+                <Ionicons name="eye" size={24} color={'white'} />
               )}
             </TouchableOpacity>
           </View>
@@ -205,7 +211,7 @@ export default function Register() {
             color={isChecked ? Colors.prinary : undefined}
           />
 
-          <Text>I agree to the terms and conditions</Text>
+          <Text style={{color:'white'}}>I agree to the terms and conditions</Text>
         </View>
         <Buttonn
           title="Sign Up"
@@ -213,122 +219,15 @@ export default function Register() {
             width:90,
             height:50,
             alignSelf:"center",
-            borderRadius:35
-            
+            borderRadius:35,
+            borderWidth:0,
+            backgroundColor:'#3CF1ED'
 
           }}
         />
-
-        {/* signup */}
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            marginVertical: 20,
-          }}
-        >
-          <View
-            style={{
-              flex: 1,
-              height: 1,
-              backgroundColor: "#B0B0B0",
-              marginHorizontal: 10,
-            }}
-          />
-          <Text style={{ fontSize: 14 }}>Or Sign up with</Text>
-          <View
-            style={{
-              flex: 1,
-              height: 1,
-              backgroundColor: "#B0B0B0",
-              marginHorizontal: 10,
-            }}
-          />
-        </View>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "center",
-          }}
-        >
-          <TouchableOpacity
-            onPress={() => console.log("Pressed")}
-            style={{
-              flex: 1,
-              alignItems: "center",
-              justifyContent: "center",
-              flexDirection: "row",
-              height: 52,
-              borderWidth: 1,
-              borderColor: "#B0B0B0",
-              marginRight: 4,
-              borderRadius: 10,
-            }}
-          >
-            <Image
-              source={require("../assets/facebook.png")}
-              style={{
-                height: 36,
-                width: 36,
-                marginRight: 8,
-              }}
-              resizeMode="contain"
-            />
-
-            <Text>Facebook</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            onPress={() => console.log("Pressed")}
-            style={{
-              flex: 1,
-              alignItems: "center",
-              justifyContent: "center",
-              flexDirection: "row",
-              height: 52,
-              borderWidth: 1,
-              borderColor: "#B0B0B0",
-              marginRight: 4,
-              borderRadius: 10,
-            }}
-          >
-            <Image
-              source={require("../assets/google.png")}
-              style={{
-                height: 36,
-                width: 36,
-                marginRight: 8,
-              }}
-              resizeMode="contain"
-            />
-
-            <Text>Google</Text>
-          </TouchableOpacity>
-        </View>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "center",
-            marginVertical: 22,
-          }}
-        >
-          <Text style={{ fontSize: 16, color: Colors.black }}>
-            Already have an account
-          </Text>
-          <Link href="/index.js">
-            <Text
-              style={{
-                fontSize: 16,
-                color: Colors.primary,
-                fontWeight: "bold",
-                marginLeft: 6,
-              }}
-            >
-              {" "}
-              Login
-            </Text>
-          </Link>
-        </View>
+        
+        
+        
       </View>
     </SafeAreaView>
   );
