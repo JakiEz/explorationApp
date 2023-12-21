@@ -19,6 +19,8 @@ import { Ionicons } from "@expo/vector-icons";
 import { saveUserData } from "../storage.js";
 import { Alert } from "react-native";
 import axios from "axios";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -43,22 +45,36 @@ const Login = () => {
       const response = await axios.post(apiUrl, data);
 
       console.log("Login successful:", response.data);
-      router.push("/Home");
-    } catch (error) {
-      console.error("Login failed:", error);
-
-      if (error.response && error.response.status === 400) {
-        Alert.alert(
-          "Incorrect Password or Username",
-          "Invalid username or password"
-        );
-      } else {
-        Alert.alert(
-          "Incorrect Password or Username",
-          "An error occurred during login"
-        );
+      if(response.status == 200 || 201){
+        try {
+          await AsyncStorage.setItem('@MySuperStore:key', JSON.stringify(response.data));
+          router.replace("/Home");
+          
+        } catch (error) {
+          console.log("Error saving data", error);
+        }
       }
+      else{
+        console.warn(response.status);
+        alert("registration failed")
+        if (error.response && error.response.status === 400) {
+          Alert.alert(
+            "Incorrect Password or Username",
+            "Invalid username or password"
+          );
+        } else {
+          Alert.alert(
+            "Incorrect Password or Username",
+            "An error occurred during login"
+          );
+        }
+      }
+      
+    } catch (error){
+      console.log(error);
     }
+
+   
   };
 
   return (

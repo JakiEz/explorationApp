@@ -178,7 +178,7 @@ const Home = () => {
               photos
             </Text>
           </View>
-          <View style={{ marginRight: 50, marginTop: A0 }}>
+          <View style={{ marginRight: 50, marginTop: 0 }}>
             <TouchableOpacity
               onPress={() => router.push("/Profile")}
               style={{
