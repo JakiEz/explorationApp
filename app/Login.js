@@ -64,7 +64,7 @@ const Login = () => {
                 fontWeight: 'bold',
               }}
             >
-              go home
+              go h
             </Link>
         <KeyboardAvoidingView
           style={styles.flexStyle}
