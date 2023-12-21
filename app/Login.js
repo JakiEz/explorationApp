@@ -70,7 +70,7 @@ const Login = () => {
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity onPress={()=>{}}style={styles.button}>
+        <TouchableOpacity onPress={()=>{router.push("/Home")}}style={styles.button}>
           <Text
             style={{
               textAlign: 'center',
