@@ -46,6 +46,7 @@ const Login = () => {
             placeholderTextColor={'grey'}
             keyboardType="email-address"
             style={styles.input}
+            
           />
         </View>
 

@@ -45,7 +45,7 @@ const DATA = [
     Category: "Animal",
   },
   {
-    id: "12345",
+    id: "1234567",
     title: "Game",
     image:
       "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
@@ -53,7 +53,7 @@ const DATA = [
     Category: "Game",
   },
   {
-    id: "12345",
+    id: "12345678",
     title: "Game",
     image:
       "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
@@ -61,7 +61,7 @@ const DATA = [
     Category: "Game",
   },
   {
-    id: "12345",
+    id: "12345679",
     title: "Game",
     image:
       "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
@@ -69,7 +69,7 @@ const DATA = [
     Category: "Game",
   },
   {
-    id: "12345",
+    id: "123456790",
     title: "Game",
     image:
       "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
@@ -77,7 +77,7 @@ const DATA = [
     Category: "Game",
   },
   {
-    id: "12345",
+    id: "1234567901",
     title: "Game",
     image:
       "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
@@ -85,7 +85,7 @@ const DATA = [
     Category: "Game",
   },
   {
-    id: "12345",
+    id: "12345679012",
     title: "Game",
     image:
       "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
@@ -93,7 +93,7 @@ const DATA = [
     Category: "Game",
   },
   {
-    id: "12345",
+    id: "123456790123",
     title: "Game",
     image:
       "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
@@ -101,7 +101,7 @@ const DATA = [
     Category: "Game",
   },
   {
-    id: "12345",
+    id: "1234567901234",
     title: "Game",
     image:
       "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
@@ -109,7 +109,7 @@ const DATA = [
     Category: "Game",
   },
   {
-    id: "12345",
+    id: "12345679012345",
     title: "Game",
     image:
       "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
@@ -117,7 +117,7 @@ const DATA = [
     Category: "Game",
   },
   {
-    id: "12345",
+    id: "123456790123456",
     title: "Game",
     image:
       "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
@@ -125,7 +125,7 @@ const DATA = [
     Category: "Game",
   },
   {
-    id: "12345",
+    id: "123456790123456",
     title: "Game",
     image:
       "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
@@ -455,7 +455,7 @@ const styles = StyleSheet.create({
   },
   p: {
     width: "auto",
-    fontFamily: "Montserrat",
+    // fontFamily: "Montserrat",
     // height: 100,
     // backgroundColor: "blue",
     justifyContent: "space-between",
