@@ -40,6 +40,35 @@ const Login = () => {
   return (
     
       <ScrollView contentContainerStyle={styles.scrollContainer}>
+<<<<<<< HEAD
+=======
+          <TouchableOpacity style={styles.button}>
+            <Link
+              href="/post"
+              style={{
+                textAlign: 'center',
+                justifyContent: 'center',
+                fontSize: 18,
+                color: Colors.white,
+                fontWeight: 'bold',
+              }}
+            >
+              go post
+            </Link>
+          </TouchableOpacity>
+          <Link
+              href="/Home"
+              style={{
+                textAlign: 'center',
+                justifyContent: 'center',
+                fontSize: 18,
+                color: Colors.white,
+                fontWeight: 'bold',
+              }}
+            >
+              go h
+            </Link>
+>>>>>>> e5b36eafb05798955c69cdebb6ca6678c38548ad
         <KeyboardAvoidingView
           style={styles.flexStyle}
           enabled
