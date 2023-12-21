@@ -24,113 +24,113 @@ const DATA = [
     id: "1234",
     title: "Jackie",
     image:
-      "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    Category: "Food",
+      "https://i.pinimg.com/originals/7e/21/48/7e2148953987ce74723756b779932271.jpg",
+    description: "Lamborghini Hurucan,pic by me",
+    Category: "Cars",
   },
   {
     id: "12345",
-    title: "Game",
+    title: "Jackie",
     image:
-      "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
+      "https://th.bing.com/th/id/R.93394d2f255d75d2907bf2ecebdcef41?rik=OeCRJdYTiMTEiw&pid=ImgRaw&r=0",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    Category: "Game",
+    Category: "Food",
   },
   {
     id: "123456",
     title: "Phone",
     image:
-      "https://www.dochord.com/wp-content/uploads/2022/01/tinn-150x150.jpg",
+      "https://www.xtrafondos.com/wallpapers/vertical/zorro-animal-6528.jpg",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     Category: "Animal",
   },
   {
     id: "1234567",
-    title: "Game",
+    title: "ls",
     image:
-      "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
+      "https://th.bing.com/th/id/R.c8a8664a2dcb8715500192f5c7af4e11?rik=VmDg%2bXAKwFOHiw&pid=ImgRaw&r=0",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    Category: "Game",
+    Category: "Food",
   },
   {
     id: "12345678",
-    title: "Game",
+    title: "Ping",
     image:
-      "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
+      "https://th.bing.com/th/id/OIP.YFbVHoivPWLQa98-5wrd6QHaLH?w=615&h=923&rs=1&pid=ImgDetMain",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    Category: "Game",
+    Category: "Toys",
   },
   {
     id: "12345679",
-    title: "Game",
+    title: "Nslookup",
     image:
-      "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
+      "https://wallpapercrafter.com/th800/331475-Vehicles-McLaren-720S-Phone-Wallpaper.jpg",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    Category: "Game",
+    Category: "Cars",
   },
   {
     id: "123456790",
-    title: "Game",
+    title: "Cd",
     image:
-      "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
+      "https://th.bing.com/th/id/OIP.rmx-HjlnYpCcRZXPPy-DJAHaO0?w=500&h=1000&rs=1&pid=ImgDetMain",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    Category: "Game",
+    Category: "Cars",
   },
   {
     id: "1234567901",
     title: "Game",
     image:
-      "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
+      "https://th.bing.com/th/id/R.79c53fcc4bc0fd4a52ef6d4ae2f60fb8?rik=5D8PQJvYqWYaiQ&pid=ImgRaw&r=0",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    Category: "Game",
+    Category: "Food",
   },
   {
     id: "12345679012",
-    title: "Game",
+    title: "Cat",
     image:
-      "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
+      "https://th.bing.com/th/id/OIP.cTXsRZJOSYS55HqjMSVrUQHaG7?rs=1&pid=ImgDetMain",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    Category: "Game",
+    Category: "Toys",
   },
   {
     id: "123456790123",
-    title: "Game",
+    title: "Verbose",
     image:
-      "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
+      "https://th.bing.com/th/id/R.f51047710ff2c8dfaa3a53ec46f20cf1?rik=laRdGWsQ7uDWog&pid=ImgRaw&r=0",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    Category: "Game",
+    Category: "Animal",
   },
   {
     id: "1234567901234",
-    title: "Game",
+    title: "WhatWeb",
     image:
-      "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
+      "https://th.bing.com/th/id/R.8ab586e8dc73a43c11aa16ab66b65009?rik=4G6lCbJbV14sMg&pid=ImgRaw&r=0",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     Category: "Game",
   },
   {
     id: "12345679012345",
-    title: "Game",
+    title: "Whois",
     image:
-      "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
+      "https://th.bing.com/th/id/R.6a406c4f27d7efd3d55cdf9cd691f087?rik=CGAfoc7nIp1mWg&pid=ImgRaw&r=0",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    Category: "Animal",
+  },
+  {
+    id: "123456790123456",
+    title: "Agression",
+    image:
+      "https://th.bing.com/th/id/R.82940715f8eaf133421c4f21680b9f34?rik=c1yuGJADk7CeeA&pid=ImgRaw&r=0",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     Category: "Game",
   },
   {
     id: "123456790123456",
-    title: "Game",
+    title: "Sudo",
     image:
-      "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
+      "https://th.bing.com/th/id/R.7a3cab595d5597122703cacbec789303?rik=4CL8xPaSwd7jZQ&pid=ImgRaw&r=0",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    Category: "Game",
-  },
-  {
-    id: "123456790123456",
-    title: "Game",
-    image:
-      "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    Category: "Game",
+    Category: "Food",
   },
 ];
 
@@ -359,7 +359,7 @@ const Home = () => {
                     width: 300,
                     height:130,
                     marginTop: 50,
-                    backgroundColor: "green",
+                    backgroundColor: "#F0F0F0",
                   }}
                 >
                   <Image
