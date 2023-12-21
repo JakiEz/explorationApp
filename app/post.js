@@ -92,11 +92,11 @@ export default function Post() {
           onValueChange={(itemValue) => setCategory(itemValue)}
           style={styles.categoryPicker}
         >
-          <Picker.Item label="Uncategorized" value="Uncategorized" />
-          <Picker.Item label="sports" value="sports" />
-          <Picker.Item label="Category 2" value="Category 2" />
-          <Picker.Item label="Category 2" value="Category 2" />
-          <Picker.Item label="Category 2" value="Category 2" />
+          <Picker.Item label="Food" value="Food" />
+          <Picker.Item label="Game" value="Game" />
+          <Picker.Item label="Animal" value="Animal" />
+          <Picker.Item label="Cars" value="Cars" />
+          <Picker.Item label="Toys" value="Toys" />
           {/* Add more categories as needed */}
         </Picker>
         <TouchableOpacity style={styles.postButton} onPress={handlePost}>
@@ -150,6 +150,6 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
     marginLeft: 20,
-    marginVertical:40
+    marginVertical:20
   },
 });
