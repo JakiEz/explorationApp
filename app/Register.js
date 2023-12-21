@@ -6,6 +6,7 @@ import {
   Text,
   SafeAreaView,
   TouchableOpacity,
+  KeyboardAvoidingView,
   Button,
 } from "react-native";
 import { ScrollView, TextInput } from "react-native-gesture-handler";
@@ -49,6 +50,12 @@ export default function Register() {
   };
 
   return (
+    <KeyboardAvoidingView
+      style={{ flex: 1,
+        backgroundColor:'#282828'}}
+      enabled
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+    >
     <SafeAreaView style={{ flex: 1, backgroundColor: "#282828" }}>
       <ScrollView>
         <Pressable
@@ -303,5 +310,6 @@ export default function Register() {
         </View>
       </ScrollView>
     </SafeAreaView>
+    </KeyboardAvoidingView>
   );
 }
