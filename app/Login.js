@@ -20,10 +20,41 @@ import {saveUserData} from '../storage.js';
 
 
 const Login = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isPasswordShown, setIsPasswordShown] = useState(false);
   const router = useRouter();
+
+  const handleLogin = async () => {
+    const apiUrl = "http://192.168.1.50:3000/user/login";; // Update with your login API endpoint
+
+    // Prepare the data
+    const data = {
+      email: email,
+      password: password,
+    };
+
+    try {
+      // Make the POST request using axios
+      const response = await axios.post(apiUrl, data);
+
+      // Handle successful login
+      console.log('Login successful:', response.data);
+
+      // Navigate to another screen or perform other actions after successful login
+    } catch (error) {
+      console.error('Login failed:', error);
+
+      // Handle unsuccessful login
+      if (error.response && error.response.status === 400) {
+        // Bad Request (invalid username or password)
+        Alert.alert('Login Failed', 'Invalid username or password');
+      } else {
+        // Other error (network issues, server error, etc.)
+        Alert.alert('Login Failed', 'An error occurred during login');
+      }
+    }
+  };
 
   return (
     <KeyboardAvoidingView
@@ -45,8 +76,10 @@ const Login = () => {
             placeholder="Enter your email address"
             placeholderTextColor={'grey'}
             keyboardType="email-address"
+            value={email}
+            onChangeText={(text) => setEmail(text)}
             style={styles.input}
-            
+
           />
         </View>
 
@@ -57,6 +90,8 @@ const Login = () => {
             placeholder="Enter your password"
             placeholderTextColor={'grey'}
             secureTextEntry={isPasswordShown}
+            value={password}
+            onChangeText={(text) => setPassword(text)}
             style={styles.input}
           />
           <TouchableOpacity
@@ -71,7 +106,7 @@ const Login = () => {
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity onPress={()=>{router.push("/Home")}}style={styles.button}>
+        <TouchableOpacity onPress={handle}style={styles.button}>
           <Text
             style={{
               textAlign: 'center',

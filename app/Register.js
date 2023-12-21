@@ -15,7 +15,7 @@ import { Ionicons } from "@expo/vector-icons";
 import CheckBox from "expo-checkbox";
 import Buttonn from "../Buttonn";
 import { Pressable } from "react-native";
-import { Link, router } from "expo-router";
+import { Link, router,Redirect } from "expo-router";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 
@@ -40,8 +40,14 @@ export default function Register() {
 
     try {
       const response = await axios.post(apiUrl, data);
-      console.log(response.data);
-      console.warn(response.status);
+      if(response.status == 201){
+        router.replace('/Login');
+      }
+      else{
+        console.warn(response.status);
+        alert("registration failed")
+      }
+      
     } catch (error){
       console.log(error);
     }

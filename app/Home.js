@@ -178,20 +178,21 @@ const Home = () => {
               photos
             </Text>
           </View>
-          <View style={{ marginRight: 30, marginTop: 10 }}>
+          <View style={{ marginRight: 50, marginTop: A0 }}>
             <TouchableOpacity
               onPress={() => router.push("/Profile")}
               style={{
                 width: 50,
                 height: 50,
                 borderRadius: 35,
-                backgroundColor: "green",
+                // backgroundColor: "green",
               }}
             >
               <Image
                 // key={item.id}
-
-                source={{ uri: data.image }}
+                style={{width: 70,
+                  height: 70,borderRadius: 35,}}
+                source={{ uri: "https://th.bing.com/th/id/OIP.aE0ZnghAkVjXM5j3cC0Q-AHaHa?w=600&h=600&rs=1&pid=ImgDetMain" }}
               />
             </TouchableOpacity>
 
