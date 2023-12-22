@@ -49,7 +49,7 @@ const Login = () => {
         try {
           await AsyncStorage.setItem('@MySuperStore:key', JSON.stringify(response.data));
           router.replace("/Home");
-          
+
         } catch (error) {
           console.log("Error saving data", error);
         }
@@ -126,7 +126,7 @@ const Login = () => {
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity onPress={handleLoginLogin} style={styles.button}>
+        <TouchableOpacity onPress={handleLogin} style={styles.button}>
           <Text
             style={{
               textAlign: "center",

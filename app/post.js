@@ -15,6 +15,9 @@ import * as Permissions from "expo-permissions";
 import { Ionicons } from "@expo/vector-icons";
 import { Picker} from '@react-native-picker/picker';
 import { ScrollView as GestureScrollView } from "react-native-gesture-handler";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import axios from "axios";
+import { getUserData } from "../storage";
 
 
 export default function Post() {
@@ -28,7 +31,7 @@ export default function Post() {
 
   const requestPermission = async () => {
     const { status } = await Permissions.askAsync(Permissions.MEDIA_LIBRARY);
-
+    
     if (status !== "granted") {
       console.log("Permission to access media library denied");
     }
@@ -42,7 +45,7 @@ export default function Post() {
         aspect: [4, 3],
         quality: 1,
       });
-
+      
       if (!result.cancelled) {
         setImage(result.uri);
       } else {
@@ -55,14 +58,46 @@ export default function Post() {
     }
   };
 
-  const handlePost = () => {
+  const retrieveId = async () => {
+    try {
+      const userData = await AsyncStorage.getItem('userData');
+      if (userData !== null) {
+        const parsedData = JSON.parse(userData);
+        return parsedData.id; // assuming the id property exists on your user data
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handlePost = async () => {
     if (image && caption.trim() !== "") {
-      // TODO: Implement logic to post the image, caption, and category
-      Alert.alert("Post Successful", "Your post has been uploaded!");
-      // Clear the state after posting
-      setImage(null);
-      setCaption("");
-      setCategory("Uncategorized");
+      const id = retrieveId(); 
+      if (!id) {
+        console.error('User id not found');
+        return;
+      }
+      const apiUrl = `http://192.168.1.50:3000/updateProfile/${id}`;
+      
+      const data = {
+        profileImage: image,
+      };
+      console.log(apiUrl)
+      try {
+        const response = await axios.put(apiUrl, data);
+  
+        if (response.status === 200) {
+          Alert.alert("Post Successful", "Your post has been uploaded!");
+          setImage(null);
+          setCaption("");
+          setCategory("Uncategorized");
+        } else {
+          Alert.alert("Error", "Failed to update the photo.");
+        }
+      } catch (error) {
+        console.error(error);
+        Alert.alert("Error", "An error occurred while updating the photo.");
+      }
     } else {
       Alert.alert("Error", "Please select an image, add a caption, and choose a category.");
     }
