@@ -278,15 +278,15 @@ const Home = () => {
                     key={item.id}
                     style={{
                       width: 34,
-                      height: 24,
+                      height: 34,
                       borderRadius: 15,
-                      backgroundColor: "green",
+                      backgroundColor: "grey",
                       position: "absolute",
                       top: 10,
-                      right: 10,
+                      right: 4,
                     }}
                   >
-                    <Text style={{ position: "absolute", top: -10 }}>
+                    <Text style={{ position: "absolute", top: 10, right: 14, color:'white' }}>
                       {index + 1}
                     </Text>
                     <Text>{}</Text>

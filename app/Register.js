@@ -26,34 +26,35 @@ export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
-  const apiUrl = "http://192.168.1.50:3000/user/create";
+  const apiUrl = "http://172.20.10.3:3000/user/create";
 
   const handleRegister = async() => {
-    // Prepare the data
     const data = {
       email: email,
       username: username,
       password: password,
       phone: phone,
     };
+
     console.log(data.email, data.username, data.password, data.phone);
 
     try {
       const response = await axios.post(apiUrl, data);
-      if(response.status == 201){
+      if(response.status === 201 || response.status === 200){
+        // response.send(data);
+        console.log(data);
         router.replace('/Login');
       }
       else{
         console.warn(response.status);
-        alert("registration failed")
+        alert("Registration failed with status code: " + response.status);
       }
       
     } catch (error){
       console.log(error);
+      alert("An error occurred during registration: " + error.message);
     }
-
-    
-  };
+};
 
   return (
     <KeyboardAvoidingView
@@ -198,6 +199,7 @@ export default function Register() {
                 borderRadius: 15,
                 alignSelf: "center",
                 padding: 22,
+              
                 backgroundColor: "#282828",
               }}
             >
@@ -206,6 +208,7 @@ export default function Register() {
                 placeholderTextColor={"grey"}
                 keyboardType="numeric"
                 style={{
+                  color:'white',
                   width: "15%",
                   borderRightWidth: 1,
                   borderLeftColor: "#282828",
@@ -222,6 +225,7 @@ export default function Register() {
                 keyboardType="numeric"
                 style={{
                   width: "80%",
+                  color:"white"
                 }}
               />
             </View>
@@ -252,6 +256,7 @@ export default function Register() {
                 alignSelf: "center",
                 justifyContent: "center",
                 padding: 22,
+                color:"white"
               }}
             >
               <TextInput
@@ -261,6 +266,7 @@ export default function Register() {
                 value={password}
                 onChangeText={(text) => setPassword(text)}
                 style={{
+                  color:"white",
                   width: "100%",
                 }}
               />

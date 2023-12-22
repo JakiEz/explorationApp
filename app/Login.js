@@ -29,7 +29,7 @@ const Login = () => {
   const router = useRouter();
 
   const handleLogin = async () => {
-    const apiUrl = "http://192.168.1.50:3000/user/login";
+    const apiUrl = "http://172.20.10.3:3000/user/login";
 
     const data = {
       email: email,
@@ -140,7 +140,7 @@ const Login = () => {
           </Text>
         </TouchableOpacity>
         
-        <TouchableOpacity onPress={()=>router.push('/Home')} style={styles.button}>
+        {/* <TouchableOpacity onPress={()=>router.push('/Home')} style={styles.button}>
           <Text
             style={{
               textAlign: "center",
@@ -152,7 +152,7 @@ const Login = () => {
           >
             LogIn
           </Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         <View style={styles.signup}>
           <Text style={{ fontSize: 16, color: "white" }}>
