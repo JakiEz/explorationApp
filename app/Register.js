@@ -313,6 +313,7 @@ export default function Register() {
               paddingBottom: 10,
               width: 90,
               height: 50,
+              marginBottom:50,
               alignSelf: "center",
               borderRadius: 35,
               borderWidth: 0,

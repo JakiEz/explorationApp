@@ -77,7 +77,7 @@ export default function Post() {
         console.error('User id not found');
         return;
       }
-      const apiUrl = `http://192.168.1.50:3000/updateProfile/${id}`;
+      const apiUrl = `http://172.20.10.3:3000/updateProfile/${id}`;
       
       const data = {
         profileImage: image,

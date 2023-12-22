@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import {
   View,
   Text,
@@ -10,6 +10,7 @@ import {
   Pressable,
   ImageBackground,
 } from "react-native";
+
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter, router, Link } from "expo-router";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -18,6 +19,7 @@ import { AntDesign } from "@expo/vector-icons";
 import { Card, Title, Paragraph } from "react-native-paper";
 import { font } from "../font.js";
 import { LinearGradient } from "expo-linear-gradient";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const DATA = [
   {
@@ -116,14 +118,7 @@ const DATA = [
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     Category: "Animal",
   },
-  {
-    id: "123456790123456",
-    title: "Agression",
-    image:
-      "https://th.bing.com/th/id/R.82940715f8eaf133421c4f21680b9f34?rik=c1yuGJADk7CeeA&pid=ImgRaw&r=0",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    Category: "Game",
-  },
+  
   {
     id: "123456790123456",
     title: "Sudo",
@@ -157,14 +152,29 @@ const Home = () => {
     : DATA;
 
   const router = useRouter();
+
+ 
+  const [photoUrl, setPhotoUrl] = useState(null);
+
+  useEffect(() => {
+    const fetchPhotoUrl = async () => {
+      const email = await AsyncStorage.getItem('email');
+
+      // Replace this with your actual API call
+      const response = await fetch(`http://172.20.10.3:3000/user/login=${email}`);
+      const data = await response.json();
+
+      setPhotoUrl(data.photoUrl);
+    };
+
+    fetchPhotoUrl();
+  }, []);
+
+
+
+
   return (
     <SafeAreaView>
-      {/* <TouchableOpacity style={styles.navBar}>
-        <View>
-          
-        </View>
-
-      </TouchableOpacity> */}
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.p}>
           <View>
@@ -279,7 +289,7 @@ const Home = () => {
                     style={{
                       width: 34,
                       height: 34,
-                      borderRadius: 15,
+                      borderRadius: 25,
                       backgroundColor: "grey",
                       position: "absolute",
                       top: 10,
@@ -368,23 +378,26 @@ const Home = () => {
                     source={{ uri: item.image }}
                     style={styles.backgroundImage}
                   />
+                  <AntDesign name="heart" size={20} color="black" style={{alignSelf:"flex-end",paddingTop:20,paddingRight:25,position:"absolute",zIndex:10}}/>
                   <View
                     key={item.id}
                     style={{
                       width: 34,
-                      height: 24,
-                      borderRadius: 15,
-                      backgroundColor: "green",
+                      height: 34,
+                      borderRadius: 35,
+                      backgroundColor: "grey",
                       position: "absolute",
-                      top: 10,
-                      right: 10,
+                      alignSelf:"flex-end",
+                      right:19,
+                      top:12
+                      
                     }}
                   >
-                    <Text style={{ position: "absolute", top: -10 }}>
+                  </View>
+                    {/* <Text style={{ position: "absolute", top: -10 }}>
                       {index + 1}
                     </Text>
-                    <Text>{}</Text>
-                  </View>
+                    <Text>{}</Text> */}
 
                   <View style={{ width: 300, marginTop: 20 }}>
                     <LinearGradient
